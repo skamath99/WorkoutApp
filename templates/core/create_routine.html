@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+
+{% block main_content %}
+    Create Routine Here!
+
+    <form action="{% url 'core:create_routine' %}" method="post">{% csrf_token %}
+        <label for="routine_name">Name: </label>
+        <input type="text" name="routine_name" value="" id="routine_name"/>
+    </form>
+{% endblock %}

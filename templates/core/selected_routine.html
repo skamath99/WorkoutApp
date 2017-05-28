@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block main_content %}
+    {{ routine.name }} <br>
+    {% for exercise,sets in exercises %}
+        <hr>
+        {{ exercise.name }}
+        <form action="#" method="post">{% csrf_token %}
+        {% for set in sets %}
+            <label for="reps">Reps: </label>
+            <input id="reps" name="{{ set.order }}_rep" value="{{ set.reps }}" type="text"/>
+            <label for="weight">Weight: </label>
+            <input id="weight" name="{{ set.order }}_weight" value="{{ set.weight }}" type="text"/>
+            <br>
+        {% endfor %}
+        </form>
+    {% endfor %}
+{% endblock %}
