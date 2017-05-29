@@ -1,1 +1,2 @@
 from api.serializers.RoutineSerializers import RoutineListSerializer, RoutineDetailSerializer
+from api.serializers.RoutineBridgeSerializers import RoutineBridgeSerializer

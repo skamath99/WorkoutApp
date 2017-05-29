@@ -1,8 +1,9 @@
 from rest_framework import viewsets
 
+from api.serializers import RoutineBridgeSerializer
 from api.serializers import RoutineDetailSerializer
 from api.serializers import RoutineListSerializer
-from core.models import Routine
+from core.models import Routine, RoutineBridgeExercise
 
 
 class RoutineViewSet(viewsets.ModelViewSet):
@@ -15,3 +16,8 @@ class RoutineViewSet(viewsets.ModelViewSet):
             return RoutineDetailSerializer
         else:
             return RoutineListSerializer
+
+
+class RoutineBridgeViewSet(viewsets.ModelViewSet):
+    queryset = RoutineBridgeExercise.objects.all()
+    serializer_class = RoutineBridgeSerializer
