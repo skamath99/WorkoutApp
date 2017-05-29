@@ -17,6 +17,9 @@ class Routine(models.Model):
 class Exercise(models.Model):
     name = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.name
+
 
 class RoutineBridgeExercise(models.Model):
     exercise = models.ForeignKey('core.Exercise')

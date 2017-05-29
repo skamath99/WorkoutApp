@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('core.urls', namespace='core')),
     url(r'^api/', include('api.urls', namespace='api')),
+    url(r'^apitests/', include('apitests.urls', namespace='apitests'))
 ]

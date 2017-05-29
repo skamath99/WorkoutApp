@@ -1,0 +1,2 @@
+import apitests.ReverseRelationTests.views
+import apitests.ReverseRelationTests.serializers

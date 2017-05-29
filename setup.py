@@ -37,7 +37,8 @@ subprocess.call('python manage.py migrate', shell=True)
 '''
 
 commands = [
-    "createDefaultRoutine"
+    "createDefaultRoutine",
+    "apitests"
 ]
 
 for command in commands:
