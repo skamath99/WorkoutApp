@@ -1,12 +1,20 @@
 from rest_framework import serializers
 
 
-from core.models import Routine, RoutineBridgeExercise
+from core.models import Routine, RoutineBridgeExercise, Exercise
 
 
 # Helper Serializers
+class ExerciseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Exercise
+        fields = ('name',)
+
 
 class RoutineBridgeExerciseSerializer(serializers.ModelSerializer):
+
+    exercise = serializers.StringRelatedField()
+
     class Meta:
         model = RoutineBridgeExercise
         fields = ('exercise', 'sets')

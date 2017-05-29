@@ -1,1 +1,1 @@
-from api.views.views import RoutineViewSet, RoutineBridgeViewSet
+from api.views.views import RoutineViewSet, RoutineBridgeViewSet, ExerciseViewSet

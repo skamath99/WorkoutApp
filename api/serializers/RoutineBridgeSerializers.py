@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from api.serializers.RoutineSerializers import RoutineListSerializer
-from core.models import RoutineBridgeExercise, Exercise
+from core.models import RoutineBridgeExercise, Exercise, Routine
 
 
 # Helper Serializers
@@ -13,10 +13,12 @@ class ExerciseSerializer(serializers.ModelSerializer):
         fields = ('name',)
 
 
-#Main Serializers
+# Main Serializers
 class RoutineBridgeSerializer(serializers.HyperlinkedModelSerializer):
-    exercise = ExerciseSerializer()
-    routine = RoutineListSerializer()
+    exercise = serializers.HyperlinkedRelatedField(view_name='api:exercise-detail', many=False, read_only=False,
+                                                   queryset=Exercise.objects.all())
+    routine = serializers.HyperlinkedRelatedField(view_name='api:routine-detail', many=False, read_only=False,
+                                                  queryset=Routine.objects.all())
 
     class Meta:
         model = RoutineBridgeExercise

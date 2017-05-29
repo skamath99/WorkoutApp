@@ -23,13 +23,13 @@ class Exercise(models.Model):
 
 class RoutineBridgeExercise(models.Model):
     exercise = models.ForeignKey('core.Exercise')
-    routine = models.ForeignKey('core.Routine')
+    routine = models.ForeignKey('core.Routine', related_name='exercises')
     sets = models.IntegerField()
 
 
 class StrengthHistory(models.Model):
     exercise = models.ForeignKey('core.Exercise', on_delete=models.CASCADE)
-    routine = models.ForeignKey('core.Routine', related_name='exercises', on_delete=models.SET_NULL, null=True)
+    routine = models.ForeignKey('core.Routine', on_delete=models.SET_NULL, null=True)
     order = models.IntegerField()
     reps = models.IntegerField()
     weight = models.DecimalField(max_digits=5, decimal_places=2)
