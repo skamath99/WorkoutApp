@@ -1,3 +1,1 @@
 from api.serializers.RoutineSerializers import RoutineListSerializer, RoutineDetailSerializer
-from api.serializers.RoutineBridgeExerciseSerializer import RoutineBridgeExerciseSerializer
-from api.serializers.ExerciseSerializers import ExerciseSerializer

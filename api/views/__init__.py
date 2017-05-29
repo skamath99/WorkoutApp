@@ -1,2 +1,1 @@
 from api.views.RoutineViews import RoutineViewSet
-from api.views.RoutineBridgeExerciseViews import RoutineBridgeExerciseViewSet
