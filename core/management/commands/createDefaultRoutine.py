@@ -1,6 +1,6 @@
 from django.core.management import BaseCommand
 
-from core.models import Routine, Exercise
+from core.models import Routine, Exercise, RoutineBridgeExercise
 
 
 class Command(BaseCommand):
@@ -10,7 +10,11 @@ class Command(BaseCommand):
         )
 
         exercise = Exercise.objects.create(
-            routine=routine,
             name='Curls',
-            sets=3
+        )
+
+        RoutineBridgeExercise.objects.create(
+            exercise=exercise,
+            routine=routine,
+            sets=3,
         )
